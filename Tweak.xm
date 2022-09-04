@@ -31,12 +31,12 @@ void Player_Update(void *player) {
  
 void setup() {
  
-PlayerController_get_team = (int (*)(void *))getRealOffset(0x1A25E24);
-PlayerController_get_isLocal = (bool (*)(void *))getRealOffset(0x1A26264);
-Transform_set_localScale = (void (*)(void*, Vector3))getRealOffset(0x2701B98);
-Component_get_transform = (void* (*)(void*))getRealOffset(0x26D3288);
+PlayerController_get_team = (int (*)(void *))getRealOffset(0x1A6F75C);
+PlayerController_get_isLocal = (bool (*)(void *))getRealOffset(0x1A71FCC);
+Transform_set_localScale = (void (*)(void*, Vector3))getRealOffset(0x285CD60);
+Component_get_transform = (void* (*)(void*))getRealOffset(0x282E158);
 
-HOOK(0x1A25490, Player_Update, old_Player_Update);
+HOOK(0x1A714F8, Player_Update, old_Player_Update);
 
 [switches addSwitch:@"Enemy Scale" description:@"Change enemy scale"];
 [switches addSliderSwitch:@"Enemy Scale" description:@"Change enemy scale" minimumValue:1 maximumValue:10 sliderColor:UIColorFromHex(0xBD0000)];
